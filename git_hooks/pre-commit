@@ -1,0 +1,42 @@
+#!/bin/bash
+
+GIT_HOME=`git rev-parse --show-toplevel`
+ESLINT="node_modules/.bin/eslint"
+
+# Find modified files
+DIFF_FILES=($(git diff --cached --name-only --diff-filter=ACM | grep ".js$"))
+if [[ "$DIFF_FILES" = "" ]]; then
+  # No js files to be checked.
+  exit 0
+fi
+
+# Jump to git root dir
+pushd ${GIT_HOME}
+
+# Eslint existed?
+if [[ ! -x "$ESLINT" ]];
+then
+  echo -e "\033[41;37mPlease install ESlint:\033[0m"
+  echo "npm install eslint --save-dev"
+  echo "npm install eslint-plugin-import --save-dev"
+  echo "npm install eslint-config-airbnb-base --save-dev"
+  exit 1
+fi
+
+# Run eslint
+$ESLINT "${DIFF_FILES[@]}"
+ESLINT_EXIT="$?"
+
+# Back to original dir
+popd
+
+# Eslint result
+if [[ "${ESLINT_EXIT}" == 0 ]];
+then
+  echo -e "\033[31mCOMMIT SUCCEEDED\033[0m"
+else
+  echo -e "\033[41;37mCOMMIT NOT ALLOWED:\033[0m Please fix eslint errors."
+  exit 1
+fi
+
+exit $?
