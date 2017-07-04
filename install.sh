@@ -11,6 +11,8 @@ then
   exit 1
 fi
 
+echo -e "\033[32mStart to install ESlint...\033[0m"
+
 # Download config
 wget ${CONFIG_URL} -O ${WORKSPACE}/.eslinter.json
 
