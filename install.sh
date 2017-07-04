@@ -14,7 +14,7 @@ fi
 echo -e "\033[32mStart to install ESlint...\033[0m"
 
 # Download config
-wget ${CONFIG_URL} -O ${WORKSPACE}/.eslinter.json
+wget ${CONFIG_URL} -O ${WORKSPACE}/.eslintrc.json
 
 # Download hook scripts
 HOOK_DIR=${WORKSPACE}/.git/hooks
