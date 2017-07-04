@@ -1,6 +1,7 @@
 #!/bin/bash
 
 WORKSPACE=`pwd`
+GIT_HOOK_DIR=${WORKSPACE}/.git/hooks
 
 CONFIG_URL="https://raw.github.com/intowow/ce-backend-js-linter/master/eslintrc.json"
 PRECOMMIT_SCRIPTS="https://raw.github.com/intowow/ce-backend-js-linter/master/git_hooks/pre-commit"
@@ -17,11 +18,11 @@ echo -e "\033[32mStart to install ESlint...\033[0m"
 wget ${CONFIG_URL} -O ${WORKSPACE}/.eslintrc.json
 
 # Download hook scripts
-HOOK_DIR=${WORKSPACE}/.git/hooks
-wget ${PRECOMMIT_SCRIPTS} -P ${HOOK_DIR}/
+rm ${GIT_HOOK_DIR}/pre-commit
+wget ${PRECOMMIT_SCRIPTS} -P ${GIT_HOOK_DIR}/
 
 # Make script executable
-chmod +x ${HOOK_DIR}/*
+chmod +x ${GIT_HOOK_DIR}/*
 
 # Finished
 echo -e "\033[32mInstallation finished.\033[0m"
