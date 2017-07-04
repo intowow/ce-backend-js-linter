@@ -35,7 +35,7 @@ if [[ "${ESLINT_EXIT}" == 0 ]];
 then
   echo -e "\033[31mCOMMIT SUCCEEDED\033[0m"
 else
-  echo -e "\033[41;37mCOMMIT NOT ALLOWED:\033[0m Please fix eslint errors."
+  echo -e "\033[41;37mCOMMIT NOT ALLOWED:\033[0m Please fix ESlint errors."
   exit 1
 fi
 
