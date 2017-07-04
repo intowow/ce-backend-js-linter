@@ -5,9 +5,9 @@ WORKSPACE=`pwd`
 CONFIG_URL="https://raw.github.com/intowow/ce-backend-js-linter/feature/auto_install_linter/eslintrc.json"
 PRECOMMIT_SCRIPTS="https://raw.github.com/intowow/ce-backend-js-linter/feature/auto_install_linter/git_hooks/pre-commit"
 
-if [ -d "${WORKSPACE}/.git" ];
+if [ ! -d "${WORKSPACE}/.git" ];
 then
-  echo -e "\033[41;37mAbort!! Is this a valid git repository folder?\033[0m"
+  echo -e "\033[41;37mAbort\!\! Is this a valid git repository folder?\033[0m"
   exit 1
 fi
 
@@ -22,4 +22,4 @@ wget ${PRECOMMIT_SCRIPTS} -P ${HOOK_DIR}/
 chmod +x ${HOOK_DIR}/*
 
 # Finished
-echo -e "\033[32mInstallation finished!\033[0m"
+echo -e "\033[32mInstallation finished.\033[0m"
