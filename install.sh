@@ -3,7 +3,7 @@
 WORKSPACE=`pwd`
 GIT_HOOK_DIR=${WORKSPACE}/.git/hooks
 
-CONFIG_URL="https://raw.github.com/intowow/ce-backend-js-linter/master/eslintrc.json"
+CONFIG_URL="https://raw.github.com/intowow/ce-backend-js-linter/master/eslintrc.yaml"
 PRECOMMIT_SCRIPTS="https://raw.github.com/intowow/ce-backend-js-linter/master/git_hooks/pre-commit"
 
 if [ ! -d "${WORKSPACE}/.git" ];
@@ -15,7 +15,7 @@ fi
 echo -e "\033[32mStart to install ESlint...\033[0m"
 
 # Download config
-wget ${CONFIG_URL} -O ${WORKSPACE}/.eslintrc.json
+wget ${CONFIG_URL} -O ${WORKSPACE}/.eslintrc.yaml
 
 # Download hook scripts
 rm ${GIT_HOOK_DIR}/pre-commit

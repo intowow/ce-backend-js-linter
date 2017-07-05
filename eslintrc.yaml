@@ -1,0 +1,11 @@
+---
+extends: airbnb-base
+
+rules:
+  key-spacing: off
+  no-multi-spaces: off
+  spaced-comment: off
+  no-use-before-define: off
+  new-cap:
+    - error
+    - properties: false

@@ -1,8 +1,0 @@
-{
-  "extends": "airbnb-base",
-  "rules":  {
-    "key-spacing": "off",
-    "no-multi-spaces": "off",
-    "spaced-comment": "off"
-  }
-}
