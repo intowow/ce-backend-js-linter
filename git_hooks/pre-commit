@@ -13,29 +13,27 @@ fi
 # Jump to git root dir
 pushd ${GIT_HOME}
 
-# Eslint existed?
+# ESLint existed?
 if [[ ! -x "$ESLINT" ]];
 then
-  echo -e "\033[41;37mPlease install ESlint:\033[0m"
-  echo "npm install eslint --save-dev"
-  echo "npm install eslint-plugin-import --save-dev"
-  echo "npm install eslint-config-airbnb-base --save-dev"
+  echo -e "\033[41;37mPlease install ESLint:\033[0m"
+  echo "npm i --save-dev eslint eslint-config-airbnb-base eslint-plugin-import"
   exit 1
 fi
 
-# Run eslint
+# Run ESLint
 $ESLINT "${DIFF_FILES[@]}"
 ESLINT_EXIT="$?"
 
 # Back to original dir
 popd
 
-# Eslint result
+# ESLint result
 if [[ "${ESLINT_EXIT}" == 0 ]];
 then
   echo -e "\033[31mCOMMIT SUCCEEDED\033[0m"
 else
-  echo -e "\033[41;37mCOMMIT NOT ALLOWED:\033[0m Please fix ESlint errors."
+  echo -e "\033[41;37mCOMMIT NOT ALLOWED:\033[0m Please fix ESLint errors."
   exit 1
 fi
 

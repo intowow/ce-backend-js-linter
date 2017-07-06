@@ -8,11 +8,11 @@ PRECOMMIT_SCRIPTS="https://raw.github.com/intowow/ce-backend-js-linter/master/gi
 
 if [ ! -d "${WORKSPACE}/.git" ];
 then
-  echo -e "\033[41;37mFailed to install. Is this a valid git repository folder?\033[0m"
+  echo -e "\033[41;37mFailed to install. You should be in the root directory of a git repository.\033[0m"
   exit 1
 fi
 
-echo -e "\033[32mStart to install ESlint...\033[0m"
+echo -e "\033[32mStart to install ESLint...\033[0m"
 
 # Download config
 wget ${CONFIG_URL} -O ${WORKSPACE}/.eslintrc.yaml
@@ -25,4 +25,4 @@ wget ${PRECOMMIT_SCRIPTS} -P ${GIT_HOOK_DIR}/
 chmod +x ${GIT_HOOK_DIR}/*
 
 # Finished
-echo -e "\033[32mInstallation finished.\033[0m"
+echo -e "\033[32mESLint installed.\033[0m"
