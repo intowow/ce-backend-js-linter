@@ -6,6 +6,10 @@ rules:
   no-multi-spaces: off
   spaced-comment: off
   no-use-before-define: off
+  global-require: off
   new-cap:
     - error
     - properties: false
+  camelcase: warn
+  no-console: off # console.log will be used for logs
+  consistent-return: off
