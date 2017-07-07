@@ -10,7 +10,7 @@
 - Install dependenceies `$ npm i --save-dev eslint eslint-config-airbnb-base eslint-plugin-import`
 - Execute install.sh `$ sh -c "$(curl -fsSL https://raw.github.com/intowow/ce-backend-js-linter/master/install.sh)"`
 
-Now ESLint is installed in this repository. And coding style checker will be triggered before each commit.
+Now **ESLint** is installed in this repository and the git **pre-commit** hook is updated. The coding style checker will be triggered before each commit.
 
 ## Package.json
 For a new created git repository. You can add the installation script to the package.json to make sure everyone who clone it will have the coding style tool installed. Following is a package.json example:
@@ -22,3 +22,7 @@ For a new created git repository. You can add the installation script to the pac
   }
 }
 ```
+
+## Reference
+- Coding style check tool: [ESLint](http://eslint.org/). Find all available rules [here](http://eslint.org/docs/rules/).
+- [Airbnb JavaScript Style Guideline](https://github.com/airbnb/javascript)
