@@ -17,7 +17,7 @@ For a new created git repository. You can add the installation script to the pac
 
 ```
 {
-  "script": {
+  "scripts": {
     "postinstall": "sh -c \"$(curl -fsSL https://raw.github.com/intowow/ce-backend-js-linter/master/install.sh)\""
   }
 }
