@@ -21,3 +21,10 @@ rules:
   no-underscore-dangle: off # Allow '_xxx' or '__xxx' naming
   no-plusplus: off
   no-bitwise: off
+  comma-dangle:
+    - error
+    - arrays: always-multiline
+      objects: always-multiline
+      imports: always-multiline
+      exports: always-multiline
+      functions: ignore
