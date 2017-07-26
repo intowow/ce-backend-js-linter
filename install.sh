@@ -9,7 +9,7 @@ PRECOMMIT_SCRIPTS="https://raw.github.com/intowow/ce-backend-js-linter/master/gi
 if [ ! -d "${WORKSPACE}/.git" ];
 then
   echo -e "\033[41;37mFailed to install. You should be in the root directory of a git repository.\033[0m"
-  exit 1
+  exit 0
 fi
 
 echo -e "\033[32mStart to install ESLint...\033[0m"
