@@ -1,0 +1,11 @@
+{
+  "name": "ce-backend-js-linter",
+  "version": "1.0.0",
+  "description": "Node.js coding style check tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "sh -c \"$(curl -fsSL https://raw.github.com/intowow/ce-backend-js-linter/master/install.sh)\""
+  },
+  "author": "yuxun@intowow.com"
+}
