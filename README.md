@@ -23,6 +23,15 @@ For a new created git repository. You can add the installation script to the pac
 }
 ```
 
+Or put ce-backend-js-linter in the **devDependencies** section and it will be installed when running npm install. Following is a package.json example:
+```
+{
+  "devDependencies": {
+    "ce-backend-js-linter": "git+https://<account>:<pwd>@github.com/intowow/ce-backend-js-linter.git"
+  }
+}
+```
+
 ## Reference
 - Coding style check tool: [ESLint](http://eslint.org/). Find all available rules [here](http://eslint.org/docs/rules/).
 - [Airbnb JavaScript Style Guideline](https://github.com/airbnb/javascript)
