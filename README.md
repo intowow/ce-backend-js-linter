@@ -27,7 +27,7 @@ Or put ce-backend-js-linter in the **devDependencies** section and it will be in
 ```
 {
   "devDependencies": {
-    "ce-backend-js-linter": "git+https://<account>:<pwd>@github.com/intowow/ce-backend-js-linter.git"
+    "ce-backend-js-linter": "git+https://github.com/intowow/ce-backend-js-linter.git"
   }
 }
 ```
