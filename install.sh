@@ -21,7 +21,7 @@ rm ${GIT_HOOK_DIR}/pre-commit || true
 wget ${PRECOMMIT_SCRIPTS} -P ${GIT_HOOK_DIR}/
 
 # Make script executable
-chmod +x ${GIT_HOOK_DIR}/*
+chmod +x ${GIT_HOOK_DIR}/pre-commit
 
 # Finished
 echo -e "\033[32mESLint installed.\033[0m"
