@@ -28,3 +28,4 @@ rules:
       imports: always-multiline
       exports: always-multiline
       functions: ignore
+  prefer-promise-reject-errors: off
