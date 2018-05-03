@@ -7,7 +7,7 @@
 
 ## Installation
 - Make sure you are in the root dir of a git repository.
-- Install dependenceies `$ npm i --save-dev eslint eslint-config-airbnb-base eslint-plugin-import`
+- Install eslint in your machine `$ yarn global add eslint eslint-config-airbnb-base eslint-plugin-import`
 - Execute install.sh `$ sh -c "$(curl -fsSL https://raw.github.com/intowow/ce-backend-js-linter/master/install.sh)"`
 
 Now **ESLint** is installed in this repository and the git **pre-commit** hook is updated. The coding style checker will be triggered before each commit. **Note: The \<git root\>/.git/hooks/pre-commit file on local filesystem will be overwrote during installation.**
