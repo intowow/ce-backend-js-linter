@@ -29,3 +29,6 @@ rules:
       exports: always-multiline
       functions: ignore
   prefer-promise-reject-errors: off
+  operator-linebreak: # Use default setting instead of airbnb rule
+    - error
+    - after
