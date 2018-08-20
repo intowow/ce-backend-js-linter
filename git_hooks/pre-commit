@@ -13,13 +13,13 @@ fi
 pushd ${GIT_HOME}
 
 
-localEslint=$(find -path "*/eslint-config-i2w_test-airbnb-base/node_modules/.bin/eslint" -print -quit)
+localEslint=$(find -path "*/eslint-config-i2w-backend-base/node_modules/.bin/eslint" -print -quit)
 # Is eslint installed?
 which $localEslint > /dev/null
 if [ $? -ne 0 ];
 then
   echo -e "\033[41;37mPlease install ESLint:\033[0m"
-  echo "yarn add eslint@^4.19.1 https://github.com/chenwei850825/js-linter-test/ eslint-plugin-import@^2.14.0"
+  echo "Cannot Find ESLint .bin in eslint-config-i2w-backend-base, Something Wrong with dependencies"
   exit 1
 fi
 
