@@ -12,17 +12,21 @@ fi
 # Jump to git root dir
 pushd ${GIT_HOME}
 
+
+localEslint=$(find -path "*/eslint-config-i2w_test-airbnb-base/node_modules/.bin/eslint" -print -quit)
 # Is eslint installed?
-which eslint > /dev/null
+which $localEslint > /dev/null
 if [ $? -ne 0 ];
 then
   echo -e "\033[41;37mPlease install ESLint:\033[0m"
-  echo "yarn global add eslint eslint-config-airbnb-base eslint-plugin-import"
+  echo "yarn add eslint@^4.19.1 https://github.com/chenwei850825/js-linter-test/ eslint-plugin-import@^2.14.0"
   exit 1
 fi
 
+localEslintrc=$(find -name .eslintrc.yaml)
+
 # Run ESLint
-eslint -c .eslintrc.yaml "${DIFF_FILES[@]}"
+$localEslint -c $localEslintrc "${DIFF_FILES[@]}"
 ESLINT_EXIT="$?"
 
 # Back to original dir
