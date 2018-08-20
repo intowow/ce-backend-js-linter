@@ -2,7 +2,7 @@
 
 ## Structure
 - eslintrc.yaml: ESLint configuration file
-- git_hooks: Folder contains git hook scripts
+- git-hooks: Folder contains git hook scripts
 - install.sh: The automatic installation script
 
 ## Installation

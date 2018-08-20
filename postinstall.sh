@@ -15,7 +15,7 @@ cp eslintrc.yaml ${WORKSPACE}/.eslintrc.yaml
 # Copy git hooks
 GIT_HOOK_DIR=${WORKSPACE}/.git/hooks
 rm ${GIT_HOOK_DIR}/pre-commit
-cp git_hooks/pre-commit ${GIT_HOOK_DIR}/
+cp git-hooks/pre-commit ${GIT_HOOK_DIR}/
 
 # Make script executable
 chmod +x ${GIT_HOOK_DIR}/pre-commit

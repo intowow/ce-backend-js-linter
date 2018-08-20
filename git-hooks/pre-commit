@@ -13,20 +13,21 @@ fi
 pushd ${GIT_HOME}
 
 
-localEslint=$(find -path "*/eslint-config-i2w-backend-base/node_modules/.bin/eslint" -print -quit)
+LOCAL_ESLINT_BIN=$(find . -path "*/eslint-config-i2w-backend-base/node_modules/.bin/eslint" -print -quit)
 # Is eslint installed?
-which $localEslint > /dev/null
+which $LOCAL_ESLINT_BIN > /dev/null
 if [ $? -ne 0 ];
 then
-  echo -e "\033[41;37mPlease install ESLint:\033[0m"
-  echo "Cannot Find ESLint .bin in eslint-config-i2w-backend-base, Something Wrong with dependencies"
+  echo -e "\033[41;37mSomething wrong with ESLint:\033[0m"
+  echo "Cannot find ESLint binary in eslint-config-i2w-backend-base."
+  echo "Please try to re-install js-linter. ($ yarn add --dev git+https://github.com/intowow/ce-backend-js-linter.git)"
   exit 1
 fi
 
-localEslintrc=$(find -name .eslintrc.yaml)
+LOCAL_ESLINT_CONFIG=$(find . -name .eslintrc.yaml -print -quit)
 
 # Run ESLint
-$localEslint -c $localEslintrc "${DIFF_FILES[@]}"
+$LOCAL_ESLINT_BIN -c $LOCAL_ESLINT_CONFIG "${DIFF_FILES[@]}"
 ESLINT_EXIT="$?"
 
 # Back to original dir
