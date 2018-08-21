@@ -10,7 +10,7 @@ fi
 echo -e "\033[32mStart to install ESLint...\033[0m"
 
 # Copy config
-cp eslintrc.yaml ${WORKSPACE}/.eslintrc.yaml
+cp eslintrc.yaml ${WORKSPACE}/.i2w-eslintrc.yaml
 
 # Copy git hooks
 GIT_HOOK_DIR=${WORKSPACE}/.git/hooks
