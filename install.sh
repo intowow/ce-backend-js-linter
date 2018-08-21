@@ -14,7 +14,7 @@ PRECOMMIT_SCRIPTS="https://raw.github.com/intowow/ce-backend-js-linter/master/gi
 echo -e "\033[32mStart to install ESLint...\033[0m"
 
 # Download config
-wget ${CONFIG_URL} -O ${WORKSPACE}/.eslintrc.yaml
+wget ${CONFIG_URL} -O ${WORKSPACE}/.i2w-eslintrc.yaml
 
 # Download hook scripts
 rm ${GIT_HOOK_DIR}/pre-commit || true
