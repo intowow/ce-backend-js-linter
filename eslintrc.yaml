@@ -32,3 +32,9 @@ rules:
   operator-linebreak: # Use default setting instead of airbnb rule
     - error
     - after
+    -
+      overrides:
+        '?': before
+        ':': before
+  function-paren-newline: off
+  implicit-arrow-linebreak: off
