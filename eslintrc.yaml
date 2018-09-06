@@ -38,3 +38,4 @@ rules:
         ':': before
   function-paren-newline: off
   implicit-arrow-linebreak: off
+  class-methods-use-this: off
