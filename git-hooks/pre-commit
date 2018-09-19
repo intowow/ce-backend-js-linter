@@ -15,11 +15,11 @@ pushd ${GIT_HOME}
 
 ESLINT_BIN=$(find . -path "*/eslint-config-i2w-backend-base/node_modules/.bin/eslint" -print -quit)
 # Is eslint installed?
-which $ESLINT_BIN > /dev/null
+which $ESLINT_BIN > /dev/null 2>&1
 if [ $? -ne 0 ];
 then
   ESLINT_BIN=$(find . -path "*/node_modules/.bin/eslint" -print -quit)
-  which $ESLINT_BIN > /dev/null
+  which $ESLINT_BIN > /dev/null 2>&1
   if [ $? -ne 0 ];
   then
   echo -e "\033[41;37mSomething wrong with ESLint:\033[0m"
