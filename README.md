@@ -1,11 +1,13 @@
 # JavaScript Code Quality Tool
 
 ## Usage
+<pre>
 - For pre-commit linter check, it will check automatically after installation
 - For manually linter check, run **"./node_modules/.bin/i2wlint" + any other arguments using in eslint**.  
-    For example, "./node_modules/.bin/i2wlint app.js" for checking syntax in app.js
-                 "./node_modules/.bin/i2wlint --fix app.js" for fixing syntax error in app.js
-
+    Examples:
+        (1)"./node_modules/.bin/i2wlint app.js" for checking syntax in app.js  
+        (2)"./node_modules/.bin/i2wlint --fix app.js" for fixing syntax error in app.js
+</pre>
 ## Installation
 - Make sure you are in the root dir of a git repository.
 - **First Method**: Execute install.sh `$ sh -c "$(curl -fsSL https://raw.github.com/intowow/ce-backend-js-linter/master/install.sh)"`
