@@ -10,5 +10,8 @@
   "dependencies": {
     "eslint-config-i2w-backend-base": "git+https://github.com/intowow/eslint-config-i2w-backend-base.git"
   },
+  "bin": {
+    "i2wlint": "./i2wlint.sh"
+  },
   "author": "yuxun@intowow.com"
 }
