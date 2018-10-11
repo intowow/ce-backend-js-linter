@@ -2,7 +2,7 @@
 
 ## Usage
 - For pre-commit linter check, it will check automatically after installation
-- For manually linter check, run **"./node_modules/.bin/i2wlint" + any other arguments using in eslint**. 
+- For manually linter check, run **"./node_modules/.bin/i2wlint" + any other arguments using in eslint**.  
     For example, "./node_modules/.bin/i2wlint app.js" for checking syntax in app.js
                  "./node_modules/.bin/i2wlint --fix app.js" for fixing syntax error in app.js
 
