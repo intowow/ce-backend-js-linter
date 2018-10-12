@@ -2,13 +2,6 @@
 
 GIT_HOME=`git rev-parse --show-toplevel`
 
-# Find modified files
-DIFF_FILES=($(git diff --cached --name-only --diff-filter=ACM | grep ".js$"))
-if [[ "$DIFF_FILES" = "" ]]; then
-  # No js files to be checked.
-  exit 0
-fi
-
 # Jump to git root dir
 pushd ${GIT_HOME}
 
@@ -31,19 +24,21 @@ fi
 
 LOCAL_ESLINT_CONFIG=$(find . -name .i2w-eslintrc.yaml -print -quit)
 
-# Run ESLint
-$ESLINT_BIN -c $LOCAL_ESLINT_CONFIG "${DIFF_FILES[@]}"
-ESLINT_EXIT="$?"
-
 # Back to original dir
 popd
+
+# Run ESLint
+$ESLINT_BIN -c $LOCAL_ESLINT_CONFIG "$@"
+ESLINT_EXIT="$?"
+
+
 
 # ESLint result
 if [[ "${ESLINT_EXIT}" == 0 ]];
 then
-  echo -e "\033[31mCOMMIT SUCCEEDED\033[0m"
+  echo -e "\033[31mCOMMIT OR FIX SUCCEEDED\033[0m"
 else
-  echo -e "\033[41;37mCOMMIT NOT ALLOWED:\033[0m Please fix ESLint errors."
+  echo -e "\033[41;37mCOMMIT OR FIX NOT ALLOWED:\033[0m Please fix ESLint errors."
   exit 1
 fi
 

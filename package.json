@@ -1,6 +1,6 @@
 {
   "name": "ce-backend-js-linter",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Node.js coding style check tool",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "eslint-config-i2w-backend-base": "git+https://github.com/intowow/eslint-config-i2w-backend-base.git"
+  },
+  "bin": {
+    "i2wlint": "./i2wlint.sh"
   },
   "author": "yuxun@intowow.com"
 }
