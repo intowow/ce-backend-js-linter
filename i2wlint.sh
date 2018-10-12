@@ -24,12 +24,14 @@ fi
 
 LOCAL_ESLINT_CONFIG=$(find . -name .i2w-eslintrc.yaml -print -quit)
 
+# Back to original dir
+popd
+
 # Run ESLint
 $ESLINT_BIN -c $LOCAL_ESLINT_CONFIG "$@"
 ESLINT_EXIT="$?"
 
-# Back to original dir
-popd
+
 
 # ESLint result
 if [[ "${ESLINT_EXIT}" == 0 ]];
